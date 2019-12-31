@@ -23,8 +23,13 @@ Route::get('/admin', function () {
     return view('admin.index');
 });
 
+// middleware for admin
 Route::group(['middleware' => 'admin'], function () {
     
+    // users
     Route::resource('/admin/users', 'AdminUsersController');
+
+    // posts
+    Route::resource('/admin/posts', 'AdminPostsController');
 });
 
