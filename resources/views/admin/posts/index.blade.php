@@ -13,6 +13,8 @@
             <th>Category</th>
             <th>Title</th>
             <th>Body</th>
+            <th>View Post</th>
+            <th>View Comments</th>
             <th>Created at</th>
             <th>Updated at</th>
             <th>Action</th>
@@ -28,6 +30,8 @@
                     <td>{{$post->category->name}}</td>
                     <td><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->title}}</a></td>
                     <td>{{str_limit($post->body, 10)}}</td>
+                    <td><a href="{{route('post.home', $post->id)}}">{{$post->title}}</a></td>
+                    <td><a href="{{route('admin.comments.show', $post->id)}}">Comments</a></td>
                     <td>{{$post->created_at->diffForHumans()}}</td>
                     <td>{{$post->updated_at->diffForHumans()}}</td>
                     <td>
